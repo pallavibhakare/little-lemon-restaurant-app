@@ -6,7 +6,7 @@ function Header(){
         <div className='logo'>
         <img src={logo} alt="Little Lemon Logo"/>
         </div>        
-        <Nav></Nav>
+        <Nav />
     </header>);
 }
 export default Header;
