@@ -28,6 +28,7 @@ function BookingPage () {
       console.error("Error submitting form:", error);
     }
   };
+  
   function reducer(state, action) {
     let newState
     switch (action.type) {

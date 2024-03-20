@@ -3,13 +3,12 @@ import { useState } from "react";
 
 const BookingForm = ({ availableTimes, dispatch, submitForm}) => {
  
-    
     const [formData, setFormData] = useState({
         name: "",
         date:"",
         time:"00:00",
         guests:"0",
-        occasion:""
+        occasion:"Occasion"
     });
 
     const handleFormChange = (event) => {
@@ -102,16 +101,19 @@ const BookingForm = ({ availableTimes, dispatch, submitForm}) => {
                             data-testid="res-occasion"
                             value={formData.occasion}
                             onChange={handleFormChange }
-                            required
                         >
-                            <option>Birthday</option>
-                            <option>Anniversary</option>
+                            <option value="Occasion">Occasion</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
                         </select>
                     </div>
-                    <div className='submit-reservation-button' aria-label="Submit form"> 
+                    <div className='submit-reservation-button' htmlFor="submit" aria-label="Submit form"> 
                         <input
+                        id="submit"
+                        name="submit"
                         type='submit'
-                        value="Make Your reservation"                        
+                        value="Make Your reservation" 
+                        disabled={!formData.name || formData.date === "" || formData.time === "00:00" || formData.guests === "" || formData.occasion === ""}
                         />
                     </div>
                 </fieldset>
