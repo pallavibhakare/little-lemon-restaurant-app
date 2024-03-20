@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+
 const BookingForm = ({ availableTimes, dispatch, submitForm}) => {
  
+    
     const [formData, setFormData] = useState({
         name: "",
         date:"",
@@ -25,19 +27,9 @@ const BookingForm = ({ availableTimes, dispatch, submitForm}) => {
         }))
        dispatch({ type: 'UPDATE_TIMES', payload: value })
       }
-      const handleSubmit = (event) => {
-        event.preventDefault();
+      const handleSubmit = (e) => {
+        e.preventDefault();
         submitForm(formData);
-        alert('Reservation submitted successfully!')
-        //Reset from fields after submission
-        setFormData({
-            name: "",
-            date: "",
-            time: "00:00",
-            guests: "0",
-            occasion: ""
-          });
-        
       }
       const currentDate = new Date().toISOString().split("T")[0]
       //const options = availableTimes ? availableTimes.map(time => <option key={time}>{time}</option>) : null;
@@ -119,8 +111,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm}) => {
                     <div className='submit-reservation-button' aria-label="Submit form"> 
                         <input
                         type='submit'
-                        value="Make Your reservation"
-                        
+                        value="Make Your reservation"                        
                         />
                     </div>
                 </fieldset>

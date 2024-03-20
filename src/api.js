@@ -7,6 +7,8 @@ const seededRandom = function (seed) {
     };
 }
 
+//This function accepts a date as a parameter and returns an array 
+//of available reservation times for the provided date 
 export function fetchAPI(date) {
     let result = [];
     let random = seededRandom(date.getDate());
@@ -21,6 +23,8 @@ export function fetchAPI(date) {
     }
     return result;
 };
+//This function accepts the booking form data as a parameter 
+//and will return true if the data was successfully submitted.
 export function submitAPI(formData) {
     return true;
 };

@@ -64,5 +64,27 @@ describe("BookingFrom", () =>{
   expect(result).toBe(true);
 });
 
+test('available times change when selecting a different date', () => {
+  // Mock available times data
+  const availableTimes = {
+    times: ['10:00', '11:00', '12:00']
+  };
+
+  // Render the BookingForm component
+  render(<BookingForm availableTimes={availableTimes} dispatch={jest.fn()} submitForm={jest.fn()} />);
+
+  // Get the date input element
+  const dateInput = screen.getByLabelText('Choose date');
+
+  // Select a different date
+  fireEvent.change(dateInput, { target: { value: '2024-03-20' } });
+
+  // Get the time select element
+  const timeSelect = screen.getByLabelText('Choose Time');
+
+  // Check if the available times have changed
+  expect(timeSelect).toHaveTextContent('Some new available time'); // Add your expected new available time here
+});
+
 
 });
