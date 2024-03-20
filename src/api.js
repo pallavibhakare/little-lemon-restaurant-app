@@ -10,6 +10,9 @@ const seededRandom = function (seed) {
 //This function accepts a date as a parameter and returns an array 
 //of available reservation times for the provided date 
 export function fetchAPI(date) {
+    if (!(date instanceof Date)) {
+        throw new TypeError('Parameter must be a Date object');
+    }
     let result = [];
     let random = seededRandom(date.getDate());
 

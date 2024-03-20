@@ -102,7 +102,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm}) => {
                             value={formData.occasion}
                             onChange={handleFormChange }
                         >
-                            <option value="Occasion">Occasion</option>
+                            
                             <option value="Birthday">Birthday</option>
                             <option value="Anniversary">Anniversary</option>
                         </select>
@@ -113,7 +113,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm}) => {
                         name="submit"
                         type='submit'
                         value="Make Your reservation" 
-                        disabled={!formData.name || formData.date === "" || formData.time === "00:00" || formData.guests === "" || formData.occasion === ""}
+                    
                         />
                     </div>
                 </fieldset>

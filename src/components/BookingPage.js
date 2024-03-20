@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 function BookingPage () {
 
-  const [date, setDate] = useState(new Date());
+ const [date, setDate] = useState(new Date());
+ 
  
   function initializeTimes(date) {
     return fetchAPI(date)
@@ -28,7 +29,7 @@ function BookingPage () {
       console.error("Error submitting form:", error);
     }
   };
-  
+
   function reducer(state, action) {
     let newState
     switch (action.type) {
@@ -53,7 +54,6 @@ function BookingPage () {
       dispatch={dispatch} 
       submitForm={submitForm} 
       />
-     
     </div>
   );
 };
