@@ -1,10 +1,10 @@
-import logo from '../images/logo.png'
+import Logo from '../images/Logo.svg'
 import Nav from './Nav';
 function Header(){
     return(
     <header className="header">
         <div className='logo'>
-        <img src={logo} alt="Little Lemon Logo"/>
+        <img src={Logo} alt="Little Lemon Logo"/>
         </div>        
         <Nav />
     </header>);

@@ -1,9 +1,9 @@
-import logo from '../images/logo.png'
+import Logo from '../images/Logo.svg'
 const Footer = () => {
     return(
         <footer>
             <div>
-                <img src={logo} alt="Little Lemon" />
+                <img src={Logo} alt="Little Lemon" />
             </div>
             <div className='doorNav'>
                  <h5>Doormat Navigation</h5>
